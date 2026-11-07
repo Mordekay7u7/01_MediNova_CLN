@@ -1,0 +1,55 @@
+# ==========================================
+# Entornos Virtuales y Python
+# ==========================================
+venv/
+.venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ==========================================
+# Variables de Entorno y Configuración (Seguridad)
+# ==========================================
+.env
+!.env.example
+*.pem
+*.key
+
+# ==========================================
+# Pruebas y Cobertura (Pytest / Coverage)
+# ==========================================
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.lprof
+
+# ==========================================
+# Base de Datos Local y Docker
+# ==========================================
+*.sqlite3
+*.db
+*.sqlite
+data/
+db_data/
+
+# ==========================================
+# IDEs y Editores de Texto
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# ==========================================
+# Logs y Archivos Temporales
+# ==========================================
+*.log
+logs/
+*.tmp
