@@ -1,0 +1,14 @@
+# Framework Web y API
+fastapi>=0.100.0
+uvicorn[standard]>=0.22.0
+pydantic>=2.0.0
+
+# Cliente HTTP para pruebas de API de FastAPI
+httpx>=0.24.0
+
+# Framework de Pruebas y Cobertura
+pytest>=7.3.0
+pytest-cov>=4.1.0
+
+# Manejo de Entorno
+python-dotenv>=1.0.0
