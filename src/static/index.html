@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediNova - Panel Integral de Citas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #fcfdfd; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .navbar { background-color: #0d47a1; }
+        .card { border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.08); }
+        .badge-PROGRAMADA { background-color: #0d6efd; }
+        .badge-EN_ESPERA { background-color: #ffc107; color: #000; }
+        .badge-NO_SHOW { background-color: #dc3545; }
+        .badge-CANCELADA { background-color: #6c757d; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">🏥 MediNova - Panel Operativo de Citas</a>
+            <a href="/docs" target="_blank" class="btn btn-outline-light btn-sm">📄 Ver OpenAPI / Swagger UI</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Alertas de estado -->
+        <div id="alerta" class="alert d-none" role="alert"></div>
+
+        <div class="row">
+            <!-- Formulario de Acciones -->
+            <div class="col-lg-5 mb-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <button class="nav-link active text-black fw-bold" id="agendar-tab" data-bs-toggle="tab" data-bs-target="#agendar" type="button">Agendar</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link text-black fw-bold" id="cancelar-tab" data-bs-toggle="tab" data-bs-target="#cancelar" type="button">Cancelar </button>
+                            </li1>
+                            <li class="nav-item">
+                                <button class="nav-link text-black fw-bold" id="historial-tab" data-bs-toggle="tab" data-bs-target="#historial" type="button">Historial </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content" id="myTabContent">
+                            <!-- Agendar -->
+                            <div class="tab-pane fade show active" id="agendar">
+                                <form id="formAgendar">
+                                    <div class="mb-2">
+                                        <label class="form-label">ID Paciente</label>
+                                        <input type="text" id="paciente_id" class="form-control form-control-sm" value="PAC-001" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">ID Médico</label>
+                                        <input type="text" id="medico_id" class="form-control form-control-sm" value="MED-012" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Sucursal</label>
+                                        <select id="sucursal_id" class="form-select form-select-sm">
+                                            <option value="SUC-SUR">Sucursal Sur</option>
+                                            <option value="SUC-CENTRO">Sucursal Centro</option>
+                                            <option value="SUC-NORTE">Sucursal Norte</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Fecha y Hora</label>
+                                        <input type="datetime-local" id="fecha_hora" class="form-control form-control-sm" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Motivo de Consulta</label>
+                                        <input type="text" id="motivo_consulta" class="form-control form-control-sm" value="Consulta médica general" required>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="es_sobrecupo">
+                                        <label class="form-check-label" for="es_sobrecupo">Solicitar Sobrecupo</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-sm w-100">Confirmar Cita</button>
+                                </form>
+                            </div>
+
+                            <!-- Cancelar con Evidencia -->
+                            <div class="tab-pane fade" id="cancelar">
+                                <form id="formCancelar">
+                                    <div class="mb-2">
+                                        <label class="form-label">ID de la Cita</label>
+                                        <input type="text" id="canc_cita_id" class="form-control form-control-sm" placeholder="Ingrese ID de cita" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Motivo de Cancelación</label>
+                                        <input type="text" id="canc_motivo" class="form-control form-control-sm" value="Paciente presentó justificante" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Usuario Responsable</label>
+                                        <input type="text" id="canc_usuario" class="form-control form-control-sm" value="recepcion_apodaca" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-danger btn-sm w-100">Registrar Cancelación</button>
+                                </form>
+                            </div>
+
+                            <!-- Historial Paciente -->
+                            <div class="tab-pane fade" id="historial">
+                                <div class="mb-2">
+                                    <label class="form-label">Buscar ID Paciente</label>
+                                    <div class="input-group">
+                                        <input type="text" id="hist_paciente_id" class="form-control form-control-sm" value="PAC-001">
+                                        <button class="btn btn-secondary btn-sm" onclick="buscarHistorial()">Buscar</button>
+                                    </div>
+                                </div>
+                                <div id="resultadoHistorial" class="mt-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla principal de Citas y No-Show -->
+            <div class="col-lg-7">
+                <div class="card">
+                    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                        <span class="fw-bold">📋 Panel Central de Agendas</span>
+                        <button class="btn btn-sm btn-outline-light" onclick="cargarCitas()">🔄 Actualizar</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Cita ID</th>
+                                        <th>Paciente</th>
+                                        <th>Fecha/Hora</th>
+                                        <th>Estado</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaCitas"></tbody>
+                            </table>
+                        </div>
+                        <hr>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-warning btn-sm w-100 fw-bold" onclick="procesarNoShows()">⏱ Control Automático No-Show (US-09)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('fecha_hora').value = new Date().toISOString().slice(0, 16);
+
+        function mostrarAlerta(mensaje, tipo) {
+            const alerta = document.getElementById('alerta');
+            alerta.className = `alert alert-${tipo}`;
+            alerta.innerText = mensaje;
+            alerta.classList.remove('d-none');
+            setTimeout(() => alerta.classList.add('d-none'), 5000);
+        }
+
+        async function cargarCitas() {
+            const res = await fetch('/api/v1/citas/todas');
+            if (res.ok) {
+                const citas = await res.json();
+                const tbody = document.getElementById('tablaCitas');
+                tbody.innerHTML = '';
+                citas.forEach(c => {
+                    const fecha = new Date(c.fecha_hora).toLocaleString();
+                    tbody.innerHTML += `
+                        <tr>
+                            <td><small class="font-monospace">${c.cita_id.substring(0, 8)}...</small></td>
+                            <td><strong>${c.paciente_id}</strong></td>
+                            <td><small>${fecha}</small></td>
+                            <td><span class="badge badge-${c.estado}">${c.estado}</span></td>
+                            <td>
+                                <button class="btn btn-outline-success btn-sm" onclick="llegada('${c.cita_id}')">Llegada</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            }
+        }
+
+        document.getElementById('formAgendar').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                paciente_id: document.getElementById('paciente_id').value,
+                medico_id: document.getElementById('medico_id').value,
+                sucursal_id: document.getElementById('sucursal_id').value,
+                fecha_hora: new Date(document.getElementById('fecha_hora').value).toISOString(),
+                motivo_consulta: document.getElementById('motivo_consulta').value,
+                es_sobrecupo: document.getElementById('es_sobrecupo').checked
+            };
+            const res = await fetch('/api/v1/citas/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (res.ok) {
+                mostrarAlerta('Cita agendada correctamente', 'success');
+                cargarCitas();
+            } else {
+                const err = await res.json();
+                mostrarAlerta(`Error: ${err.detail}`, 'danger');
+            }
+        });
+
+        document.getElementById('formCancelar').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const citaId = document.getElementById('canc_cita_id').value;
+            const data = {
+                motivo: document.getElementById('canc_motivo').value,
+                usuario_responsable: document.getElementById('canc_usuario').value
+            };
+            const res = await fetch(`/api/v1/citas/${citaId}/cancelar`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (res.ok) {
+                mostrarAlerta('Cancelación registrada con evidencia obligatoria', 'warning');
+                cargarCitas();
+            } else {
+                const err = await res.json();
+                mostrarAlerta(`Error: ${err.detail}`, 'danger');
+            }
+        });
+
+        async function llegada(citaId) {
+            const res = await fetch(`/api/v1/citas/${citaId}/registrar-llegada`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ minutos_retraso: 0, forma_pago: 'PAGO_DIRECTO' })
+            });
+            if (res.ok) {
+                mostrarAlerta('Llegada registrada. Estado actualizado a EN_ESPERA', 'info');
+                cargarCitas();
+            }
+        }
+
+        async function procesarNoShows() {
+            const res = await fetch('/api/v1/citas/procesar-no-shows', { method: 'POST' });
+            if (res.ok) {
+                const data = await res.json();
+                mostrarAlerta(`Control ejecutado. ${data.length} citas cambiadas a No-Show.`, 'warning');
+                cargarCitas();
+            }
+        }
+
+        async function buscarHistorial() {
+            const pacId = document.getElementById('hist_paciente_id').value;
+            const res = await fetch(`/api/v1/citas/paciente/${pacId}/historial`);
+            if (res.ok) {
+                const citas = await res.json();
+                let html = `<ul class="list-group list-group-flush">`;
+                citas.forEach(c => {
+                    html += `<li class="list-group-item d-flex justify-content-between">
+                        <span>${c.motivo_consulta}</span>
+                        <span class="badge badge-${c.estado}">${c.estado}</span>
+                    </li>`;
+                });
+                html += `</ul>`;
+                document.getElementById('resultadoHistorial').innerHTML = html;
+            }
+        }
+
+        cargarCitas();
+    </script>
+</body>
+</html>
