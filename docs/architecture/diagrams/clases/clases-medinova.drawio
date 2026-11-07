@@ -1,0 +1,468 @@
+<mxfile host="app.diagrams.net" pages="4">
+  <diagram id="MNV-clases01" name="01 · Modelo de clases: núcleo de citas">
+    <mxGraphModel dx="1419" dy="783" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3337" pageHeight="1768" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg_presentation" parent="1" style="rounded=0;fillColor=#FCFAFF;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1768" width="3337" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_0" parent="1" style="rounded=1;arcSize=3;fillColor=#F1E9FF;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1473" width="817" x="35" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_1" parent="1" style="rounded=1;arcSize=3;fillColor=#EAF2FF;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1473" width="817" x="852" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_2" parent="1" style="rounded=1;arcSize=3;fillColor=#FFF0FA;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1473" width="817" x="1668" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_3" parent="1" style="rounded=1;arcSize=3;fillColor=#EDEBFF;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1473" width="817" x="2485" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="n_cita" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E9D8FD;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#E9D8FD;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«AggregateRoot» Cita&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − id: CitaId&lt;br/&gt;• − pacienteId: PacienteId&lt;br/&gt;• − medicoId: MedicoId&lt;br/&gt;• − horario: Horario; − estado: EstadoCita&lt;br/&gt;• + cancelar(motivo): void&lt;br/&gt;• + registrarLlegada(instante): void&lt;br/&gt;• + registrarNoShow(): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="315" width="499" x="1818" y="773" as="geometry" />
+        </mxCell>
+        <mxCell id="header_band" parent="1" style="rounded=0;fillColor=#F3ECFF;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="187" width="3337" as="geometry" />
+        </mxCell>
+        <mxCell id="header_rule" parent="1" style="rounded=0;fillColor=#9272DB;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="11" width="3337" as="geometry" />
+        </mxCell>
+        <mxCell id="header_kicker" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#625082;" value="MEDINOVA  /  ARQUITECTURA DE SOFTWARE" vertex="1">
+          <mxGeometry height="38" width="3197" x="80" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="header_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=38;fontStyle=1;fontColor=#352956;" value="01  |  Modelo estructural de citas" vertex="1">
+          <mxGeometry height="70" width="3197" x="80" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="n_jornada" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DCE8FF;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#DCE8FF;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«AggregateRoot» JornadaMedica&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − id: JornadaId; − medicoId: MedicoId&lt;br/&gt;• − sucursalId: SucursalId&lt;br/&gt;• − turnos: List&amp;lt;Turno&amp;gt;&lt;br/&gt;• + validarDisponibilidad(horario): bool&lt;br/&gt;• + autorizarSobrecupo(aval): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="244" width="499" x="2643" y="362" as="geometry" />
+        </mxCell>
+        <mxCell id="n_exp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FBD8EF;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#FBD8EF;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«AggregateRoot» ExpedientePaciente&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − id: ExpedienteId&lt;br/&gt;• − historial: List&amp;lt;EntradaHistorial&amp;gt;&lt;br/&gt;• − ausencias: int&lt;br/&gt;• + registrarNoShow(citaId): void&lt;br/&gt;• + consultarHistorial(): Historial&lt;/div&gt;" vertex="1">
+          <mxGeometry height="244" width="531" x="2626" y="662" as="geometry" />
+        </mxCell>
+        <mxCell id="fc_4BCcEcfN0L0xeOklV-1" edge="1" parent="1" source="n_horario" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="n_estado" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n_horario" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8F3FA;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#D8F3FA;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«ValueObject» Horario&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − fecha: Date; − inicio: Time&lt;br/&gt;• − fin: Time&lt;br/&gt;• + solapa(otro: Horario): bool&lt;br/&gt;• + duracion(): Duration&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="499" x="2643" y="965" as="geometry" />
+        </mxCell>
+        <mxCell id="n_estado" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FFE1E9;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#FFE1E9;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«enum» EstadoCita&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• RESERVADA&lt;br/&gt;• CANCELADA&lt;br/&gt;• NO_SHOW&lt;/div&gt;" vertex="1">
+          <mxGeometry height="173" width="499" x="2643" y="1233" as="geometry" />
+        </mxCell>
+        <mxCell id="n_repo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFF5EB;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#CFF5EB;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«interface» ICitaRepositorio&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + obtener(id: CitaId): Cita?&lt;br/&gt;• + guardar(cita: Cita): void&lt;br/&gt;• + buscarSolapamientos(pacienteId, horario): List&amp;lt;Cita&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="173" width="499" x="1028" y="839" as="geometry" />
+        </mxCell>
+        <mxCell id="n_service" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E9D8FD;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#E9D8FD;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;ReservaApplicationService&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − citas: ICitaRepositorio&lt;br/&gt;• − jornadas: IJornadaRepositorio&lt;br/&gt;• − uow: IUnitOfWork&lt;br/&gt;• + agendar(command: ReservaCommand): Resultado&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="499" x="231" y="1008" as="geometry" />
+        </mxCell>
+        <mxCell id="n_uow" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DCE8FF;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#DCE8FF;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«interface» IUnitOfWork&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + commit(): void&lt;br/&gt;• + rollback(): void&lt;br/&gt;• Contrato de persistencia atómica local&lt;/div&gt;" vertex="1">
+          <mxGeometry height="173" width="499" x="1160" y="1088" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" edge="1" parent="1" source="n_cita" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_horario" value="composición 1">
+          <mxGeometry relative="1" x="0.5529" y="-20" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="2480" y="980" />
+              <mxPoint x="2480" y="1070" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="n_cita" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_estado" value="usa 1">
+          <mxGeometry relative="1" x="-0.0107" y="-10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="2067.5" y="1310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="n_cita" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_jornada" value="referencia ID">
+          <mxGeometry relative="1" x="0.0028" y="10" as="geometry">
+            <mxPoint x="1" as="offset" />
+            <Array as="points">
+              <mxPoint x="2067.5" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="n_cita" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_exp" value="referencia ID">
+          <mxGeometry relative="1" x="0.4028" y="24" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="2471.5" y="830" />
+              <mxPoint x="2471.5" y="784" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="n_service" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_repo" value="dependencia">
+          <mxGeometry relative="1" x="0.0222" y="16" as="geometry">
+            <mxPoint y="1" as="offset" />
+            <Array as="points">
+              <mxPoint x="480.5" y="925.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="n_service" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_uow" value="dependencia">
+          <mxGeometry relative="1" x="-0.3111" y="10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="945" y="1140" />
+              <mxPoint x="945" y="1174.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="n_repo" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_cita" value="persistencia">
+          <mxGeometry relative="1" x="-0.0169" y="17" as="geometry">
+            <mxPoint x="8" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="title_accent" parent="1" style="rounded=1;fillColor=#B79CF8;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="100" width="16" x="50" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="title_line" parent="1" style="rounded=1;fillColor=#D8C9F6;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="3" width="1980" x="88" y="165" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="MNV-clases02" name="02 · Modelo de clases: agenda y cupos">
+    <mxGraphModel dx="1161" dy="641" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2563" pageHeight="1750" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg_presentation" parent="1" style="rounded=0;fillColor=#FCFAFF;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1750" width="2563" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_0" parent="1" style="rounded=1;arcSize=3;fillColor=#F1E9FF;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1455" width="623" x="35" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_1" parent="1" style="rounded=1;arcSize=3;fillColor=#EAF2FF;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1455" width="623" x="658" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_2" parent="1" style="rounded=1;arcSize=3;fillColor=#FFF0FA;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1455" width="623" x="1282" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_3" parent="1" style="rounded=1;arcSize=3;fillColor=#EDEBFF;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1455" width="623" x="1905" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="n_jornada" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E9D8FD;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#E9D8FD;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«AggregateRoot» JornadaMedica&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − id: JornadaId; − medicoId: MedicoId&lt;br/&gt;• − sucursalId: SucursalId&lt;br/&gt;• − turnos: List&amp;lt;Turno&amp;gt;&lt;br/&gt;• + verificarCupo(horario): bool&lt;br/&gt;• + registrarSobrecupo(aval): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="244" width="499" x="212" y="824" as="geometry" />
+        </mxCell>
+        <mxCell id="header_band" parent="1" style="rounded=0;fillColor=#F3ECFF;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="187" width="2563" as="geometry" />
+        </mxCell>
+        <mxCell id="header_rule" parent="1" style="rounded=0;fillColor=#9272DB;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="11" width="2563" as="geometry" />
+        </mxCell>
+        <mxCell id="header_kicker" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#625082;" value="MEDINOVA  /  ARQUITECTURA DE SOFTWARE&amp;nbsp;" vertex="1">
+          <mxGeometry height="38" width="2423" x="80" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="header_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=38;fontStyle=1;fontColor=#352956;" value="02  |  Agenda y política de sobrecupo" vertex="1">
+          <mxGeometry height="70" width="2423" x="80" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="n_turno" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DCE8FF;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#DCE8FF;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«Entity» Turno&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − id: TurnoId; − intervalo: Horario&lt;br/&gt;• − capacidadBase: int&lt;br/&gt;• − sobrecupos: int&lt;br/&gt;• + cupoDisponible(): int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="499" x="1043" y="896" as="geometry" />
+        </mxCell>
+        <mxCell id="n_bloqueo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8F3FA;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#D8F3FA;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«Entity» BloqueoTemporal&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − franja: Horario&lt;br/&gt;• − expiraEn: DateTime&lt;br/&gt;• − token: UUID&lt;br/&gt;• + vigente(ahora): bool&lt;br/&gt;• + liberar(): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="244" width="499" x="1043" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="n_aval" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FBD8EF;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#FBD8EF;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«ValueObject» AvalSobrecupo&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − medicoId: MedicoId&lt;br/&gt;• − autorizado: bool&lt;br/&gt;• − fecha: DateTime&lt;br/&gt;• Validación por valores&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="499" x="1858" y="1048" as="geometry" />
+        </mxCell>
+        <mxCell id="n_politica" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FFE1E9;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#FFE1E9;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«DomainService» PoliticaSobrecupo&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + validarPermiso(medicoId): void&lt;br/&gt;• + validarLimite(turno): void&lt;br/&gt;• + validarAval(aval): void&lt;br/&gt;• Regla: máximo dos extras/turno&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="510" x="205" y="1125" as="geometry" />
+        </mxCell>
+        <mxCell id="n_agenda" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFF5EB;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#CFF5EB;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;AgendaApplicationService&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − jornadas: IJornadaRepositorio&lt;br/&gt;• − bloqueos: IBloqueoRepositorio&lt;br/&gt;• + consultarDisponibilidad(query): AgendaDTO&lt;br/&gt;• + retenerFranja(command): Token&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="499" x="212" y="486" as="geometry" />
+        </mxCell>
+        <mxCell id="n_repo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DCE8FF;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#DCE8FF;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«interface» IJornadaRepositorio&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + obtener(id: JornadaId): JornadaMedica?&lt;br/&gt;• + guardar(jornada): void&lt;br/&gt;• + listarPorMedico(medicoId): List&amp;lt;JornadaMedica&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="173" width="499" x="1043" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="n_clock" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E9D8FD;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#E9D8FD;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«interface» IReloj&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + ahora(): DateTime&lt;br/&gt;• Inyección para evaluar vencimiento&lt;/div&gt;" vertex="1">
+          <mxGeometry height="139" width="499" x="1858" y="399" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" edge="1" parent="1" source="n_jornada" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_turno" value="composición 1..*">
+          <mxGeometry relative="1" x="-0.3643" y="20" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="n_turno" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_aval" value="asociación 0..2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="n_politica" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_turno" value="verifica">
+          <mxGeometry relative="1" x="-0.0601" y="30" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1318.5" y="1240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="n_politica" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_aval" value="consulta">
+          <mxGeometry relative="1" x="0.068" y="20" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="460" y="1410" />
+              <mxPoint x="2133.5" y="1410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="n_agenda" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_repo" value="depende">
+          <mxGeometry relative="1" x="-0.5267" y="15" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="n_agenda" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_bloqueo" value="gestiona">
+          <mxGeometry relative="1" x="0.0366" y="20" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="461.5" y="440" />
+              <mxPoint x="903" y="440" />
+              <mxPoint x="903" y="472" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="n_bloqueo" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_clock" value="usa">
+          <mxGeometry relative="1" x="0.1612" y="23" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="title_accent" parent="1" style="rounded=1;fillColor=#B79CF8;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="100" width="16" x="50" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="title_line" parent="1" style="rounded=1;fillColor=#D8C9F6;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="3" width="1980" x="88" y="165" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="MNV-clases03" name="03 · Modelo de clases: asistencia e historial">
+    <mxGraphModel dx="1202" dy="664" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2550" pageHeight="1820" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg_presentation" parent="1" style="rounded=0;fillColor=#FCFAFF;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1820" width="2550" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_0" parent="1" style="rounded=1;arcSize=3;fillColor=#F1E9FF;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1525" width="620" x="35" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_1" parent="1" style="rounded=1;arcSize=3;fillColor=#EAF2FF;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1525" width="620" x="655" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_2" parent="1" style="rounded=1;arcSize=3;fillColor=#FFF0FA;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1525" width="620" x="1275" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_3" parent="1" style="rounded=1;arcSize=3;fillColor=#EDEBFF;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1525" width="620" x="1895" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="n_cita" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E9D8FD;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#E9D8FD;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«AggregateRoot» Cita&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − id: CitaId; − estado: EstadoCita&lt;br/&gt;• − horario: Horario&lt;br/&gt;• − llegadaEn: DateTime?&lt;br/&gt;• + registrarLlegada(instante): void&lt;br/&gt;• + registrarNoShow(): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="244" width="499" x="940" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="header_band" parent="1" style="rounded=0;fillColor=#F3ECFF;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="187" width="2550" as="geometry" />
+        </mxCell>
+        <mxCell id="header_rule" parent="1" style="rounded=0;fillColor=#9272DB;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="11" width="2550" as="geometry" />
+        </mxCell>
+        <mxCell id="header_kicker" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#625082;" value="MEDINOVA  /  ARQUITECTURA DE SOFTWARE&amp;nbsp;" vertex="1">
+          <mxGeometry height="38" width="2410" x="80" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="header_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=38;fontStyle=1;fontColor=#352956;" value="03  |  Asistencia y registro de ausencias" vertex="1">
+          <mxGeometry height="70" width="2410" x="80" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="n_exp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FBD8EF;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#FBD8EF;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«AggregateRoot» ExpedientePaciente&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − id: ExpedienteId&lt;br/&gt;• − entradas: List&amp;lt;EntradaHistorial&amp;gt;&lt;br/&gt;• − ausencias: int&lt;br/&gt;• + registrarAusencia(citaId): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="531" x="908" y="972" as="geometry" />
+        </mxCell>
+        <mxCell id="n_entrada" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DCE8FF;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#DCE8FF;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«Entity» EntradaHistorial&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − id: EntradaId; − citaId: CitaId&lt;br/&gt;• − tipo: TipoEntrada&lt;br/&gt;• − fecha: DateTime&lt;br/&gt;• − observacion: string&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="499" x="1855" y="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="n_tolerancia" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8F3FA;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#D8F3FA;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«DomainService» ReglaLlegada&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + evaluarRetraso(horaCita, llegada): Resultado&lt;br/&gt;• + requiereDecisionMedica(): bool&lt;br/&gt;• Regla: 15 min con validación médica&lt;/div&gt;" vertex="1">
+          <mxGeometry height="173" width="499" x="1480" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="n_no" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FFE1E9;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#FFE1E9;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«DomainService» ReglaNoShow&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + vencido(horaCita, ahora): bool&lt;br/&gt;• + verificarSinLlegada(cita): void&lt;br/&gt;• Regla: 20 min sin recepción&lt;/div&gt;" vertex="1">
+          <mxGeometry height="173" width="499" x="1855" y="799" as="geometry" />
+        </mxCell>
+        <mxCell id="n_asistencia" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFF5EB;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#CFF5EB;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;AsistenciaApplicationService&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − citas: ICitaRepositorio&lt;br/&gt;• − expedientes: IExpedienteRepositorio&lt;br/&gt;• + registrarLlegada(command): Resultado&lt;br/&gt;• + procesarAusencias(ahora): int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="499" x="110" y="1140" as="geometry" />
+        </mxCell>
+        <mxCell id="n_repo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DCE8FF;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#DCE8FF;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«interface» IExpedienteRepositorio&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + obtener(id: ExpedienteId): ExpedientePaciente?&lt;br/&gt;• + guardar(expediente): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="139" width="499" x="930" y="1282" as="geometry" />
+        </mxCell>
+        <mxCell id="n_reloj" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E9D8FD;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#E9D8FD;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«interface» IReloj&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + ahora(): DateTime&lt;br/&gt;• Evita dependencia de hora del sistema&lt;/div&gt;" vertex="1">
+          <mxGeometry height="139" width="499" x="1010" y="1521" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" edge="1" parent="1" source="n_cita" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="n_tolerancia" value="evalúa llegada">
+          <mxGeometry relative="1" x="-0.0356" y="26" as="geometry">
+            <mxPoint x="1" as="offset" />
+            <Array as="points">
+              <mxPoint x="1200" y="396.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="n_cita" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_no" value="evalúa ausencia">
+          <mxGeometry relative="1" x="-0.4962" y="22" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="n_exp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_entrada" value="composición 0..*">
+          <mxGeometry relative="1" x="0.4939" y="35" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="n_asistencia" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_cita" value="invoca">
+          <mxGeometry relative="1" x="0.0102" y="30" as="geometry">
+            <mxPoint x="-1" as="offset" />
+            <Array as="points">
+              <mxPoint x="359.5" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="n_asistencia" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_exp" value="actualiza">
+          <mxGeometry relative="1" x="0.086" y="30" as="geometry">
+            <mxPoint x="-1" as="offset" />
+            <Array as="points">
+              <mxPoint x="359.5" y="1040" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="n_asistencia" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_repo" value="depende">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="n_asistencia" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_reloj" value="usa">
+          <mxGeometry relative="1" x="-0.0109" y="20" as="geometry">
+            <mxPoint x="-1" as="offset" />
+            <Array as="points">
+              <mxPoint x="359.5" y="1570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="title_accent" parent="1" style="rounded=1;fillColor=#B79CF8;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="100" width="16" x="50" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="title_line" parent="1" style="rounded=1;fillColor=#D8C9F6;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="3" width="1980" x="88" y="165" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="MNV-clases04" name="04 · Modelo de clases: aplicación y CQRS">
+    <mxGraphModel dx="3650" dy="2014" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3251" pageHeight="1750" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg_presentation" parent="1" style="rounded=0;fillColor=#FCFAFF;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1750" width="3251" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_0" parent="1" style="rounded=1;arcSize=3;fillColor=#F1E9FF;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1455" width="795" x="35" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_1" parent="1" style="rounded=1;arcSize=3;fillColor=#EAF2FF;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1455" width="795" x="830" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_2" parent="1" style="rounded=1;arcSize=3;fillColor=#FFF0FA;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1455" width="795" x="1626" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="ribbon_3" parent="1" style="rounded=1;arcSize=3;fillColor=#EDEBFF;opacity=46;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="1455" width="795" x="2421" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="n_command" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E9D8FD;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#E9D8FD;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«Command» ReservarCita&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + pacienteId: PacienteId&lt;br/&gt;• + medicoId: MedicoId&lt;br/&gt;• + sucursalId: SucursalId&lt;br/&gt;• + horario: Horario&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="499" x="140" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="header_band" parent="1" style="rounded=0;fillColor=#F3ECFF;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="187" width="3251" as="geometry" />
+        </mxCell>
+        <mxCell id="header_rule" parent="1" style="rounded=0;fillColor=#9272DB;strokeColor=none;locked=1;" value="" vertex="1">
+          <mxGeometry height="11" width="3251" as="geometry" />
+        </mxCell>
+        <mxCell id="header_kicker" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#625082;" value="MEDINOVA  /  ARQUITECTURA DE SOFTWARE" vertex="1">
+          <mxGeometry height="38" width="3111" x="90" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="header_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=38;fontStyle=1;fontColor=#352956;" value="04  |  Cobertura y servicios de aplicación" vertex="1">
+          <mxGeometry height="70" width="3111" x="88" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="n_handler" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DCE8FF;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#DCE8FF;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«CommandHandler» ReservaHandler&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − service: ReservaApplicationService&lt;br/&gt;• + handle(command: ReservarCita): Resultado&lt;/div&gt;" vertex="1">
+          <mxGeometry height="139" width="517" x="924" y="941" as="geometry" />
+        </mxCell>
+        <mxCell id="n_service" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFF5EB;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#CFF5EB;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;ReservaApplicationService&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − citas: ICitaRepositorio&lt;br/&gt;• − jornadas: IJornadaRepositorio&lt;br/&gt;• − uow: IUnitOfWork&lt;br/&gt;• + agendar(command): Resultado&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="499" x="1722" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="n_query" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FBD8EF;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#FBD8EF;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«Query» ConsultarDisponibilidad&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + medicoId: MedicoId&lt;br/&gt;• + sucursalId: SucursalId&lt;br/&gt;• + fecha: Date&lt;/div&gt;" vertex="1">
+          <mxGeometry height="173" width="499" x="187" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="n_queryhandler" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8F3FA;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#D8F3FA;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«QueryHandler» DisponibilidadHandler&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• − jornadas: IJornadaRepositorio&lt;br/&gt;• + handle(query): DisponibilidadDTO&lt;/div&gt;" vertex="1">
+          <mxGeometry height="139" width="546" x="956" y="439" as="geometry" />
+        </mxCell>
+        <mxCell id="n_dto" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E9D8FD;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#E9D8FD;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«DTO» DisponibilidadDTO&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + fecha: Date; + medicoId: MedicoId&lt;br/&gt;• + franjas: List&amp;lt;FranjaDTO&amp;gt;&lt;br/&gt;• + cuposDisponibles: int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="173" width="499" x="1769" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="n_repo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DCE8FF;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#DCE8FF;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«interface» ICitaRepositorio&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + obtener(id): Cita?&lt;br/&gt;• + guardar(cita): void&lt;br/&gt;• + buscarSolapamientos(...): List&amp;lt;Cita&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="173" width="499" x="2560" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="n_gateway" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FFE1E9;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#FFE1E9;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«interface» IAseguradoraGateway&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + consultarCobertura(pacienteId): ResultadoCobertura&lt;br/&gt;• Contrato externo; adaptador intercambiable&lt;/div&gt;" vertex="1">
+          <mxGeometry height="139" width="499" x="2572" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="n_uow" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFF5EB;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#CFF5EB;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«interface» IUnitOfWork&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + commit(): void&lt;br/&gt;• + rollback(): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="139" width="499" x="2572" y="1001" as="geometry" />
+        </mxCell>
+        <mxCell id="n_notificaciones" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FBD8EF;strokeWidth=2.6;align=left;verticalAlign=top;spacing=0;overflow=fill;fontColor=#43365F;fontSize=14;" value="&lt;div style=&quot;background:#FBD8EF;color:#43365F;font-size:21px;font-weight:bold;padding:14px&quot;&gt;«interface» INotificador&lt;/div&gt;&lt;div style=&quot;text-align:left;padding:9px;font-size:15px;line-height:1.6&quot;&gt;• + confirmarCita(citaId): void&lt;br/&gt;• + informarCambio(citaId): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="139" width="499" x="2572" y="1203" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" edge="1" parent="1" source="n_command" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_handler" value="despacha">
+          <mxGeometry relative="1" x="0.0155" y="21" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="n_handler" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_service" value="invoca">
+          <mxGeometry relative="1" x="-0.0158" y="-10" as="geometry">
+            <mxPoint y="-21" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="n_service" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_repo" value="escribe">
+          <mxGeometry relative="1" x="0.006" y="20" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1971.5" y="730" />
+              <mxPoint x="2809.5" y="730" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="n_service" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_gateway" value="consulta">
+          <mxGeometry relative="1" x="-0.5411" y="20" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="2396.5" y="950" />
+              <mxPoint x="2396.5" y="869.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="n_service" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_uow" value="coordina">
+          <mxGeometry relative="1" x="0.5474" y="20" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="n_service" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_notificaciones" value="notifica">
+          <mxGeometry relative="1" x="0.0089" y="-20" as="geometry">
+            <mxPoint x="-1" as="offset" />
+            <Array as="points">
+              <mxPoint x="1971.5" y="1250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="n_query" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_queryhandler" value="despacha">
+          <mxGeometry relative="1" x="-0.0074" y="-26" as="geometry">
+            <mxPoint x="26" y="-26" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="n_queryhandler" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#8062C8;strokeWidth=2.2;fontColor=#5A478D;fontSize=13;labelBackgroundColor=#FCFAFF;" target="n_dto" value="devuelve">
+          <mxGeometry relative="1" x="0.0074" y="17" as="geometry">
+            <mxPoint x="17" y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="title_accent" parent="1" style="rounded=1;fillColor=#B79CF8;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="100" width="16" x="50" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="title_line" parent="1" style="rounded=1;fillColor=#D8C9F6;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="3" width="1980" x="88" y="165" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
